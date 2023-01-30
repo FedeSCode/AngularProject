@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularProjet';
+  isAuth = false;
+
+  constructor(){
+    setTimeout(
+      () => {
+        this.isAuth = true;
+      },4000
+    );
+  }
+
+  allPresent(){
+    alert("ils sont tous là!");
+  }
+  
+  
 }
