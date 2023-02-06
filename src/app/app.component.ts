@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { StudentService } from './service/student.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'AngularProjet';
   isAuth = false;
+  students : any;
   
-  studentOne= "Henry";
-  studentTwo ="Tony";
-  studentThree ="Lina";
 
-  studentStatus = "Present/Absent/Late";
 
-  constructor(){
+  constructor(private studentService: StudentService ){
     setTimeout(
       () => {
         this.isAuth = true;
@@ -23,10 +21,39 @@ export class AppComponent {
     );
   }
 
+  ngOnInit() {
+    this.students=  this.studentService.students ;
+  }
+  
   allPresent(){
-    alert("ils sont tous là!");
+    if(confirm('Etes vous sûr qu \\’ils sont tous presents ?')){
+      this.studentService.switchOnAll();
+    }else {
+      return ; 
+    }
   }
 
+  allAbsent(){
+    if(confirm('Etes vous sûr qu \\’ils sont tous absents ?')){
+      this.studentService.switchOffAll();
+    }else {
+      return ; 
+    }
+  }
+  
+  allLate(){
+    if(confirm('Etes vous sûr qu \\’ils sont tous en retard ?')){
+      this.studentService.switchLate();
+    }else {
+      return ; 
+    }
+  }
+
+  lastUpdate = new Date();
+
+  
+
+  
   
 
   

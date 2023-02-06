@@ -1,4 +1,6 @@
-<li class="list-group-item">
+<li [ngClass]="{'list-group-item': true,
+        'list-group-item-success': studentStatus === 'present',
+        'list-group-item-danger': studentStatus === 'absent'}">
 
     <!-- <h4>Etudiant:
         <input type="text" class="form-control" [(ngModel)]="studentName">
@@ -13,12 +15,12 @@
         {{studentName}} {{studentStatus}}
     </h4>-->
 
-    <div>
-    <h4>Etudiant: <input type="text" class="form-control" [(ngModel)]="studentName">
-        <input type="text" class="form-control" [(ngModel)]="studentStatus">: {{studentName}} {{studentStatus }} 
-        <span></span></h4>
-    </div>
-   
+    <div class="students-card" >
+        <h4>Etudiant: <input type="text" class="form-control" [(ngModel)]="studentName">
+        <input type="text" class="form-control" [(ngModel)]="studentStatus">
+    </h4>
+    <h4 [ngStyle]="{color:getColor()}"> étudiant : {{studentName}} -- Statut :{{ getStatus() }} </h4>
+
     <div style="width:20px; height:20px; background-color:red; " 
         *ngIf="studentStatus === 'absent' || studentStatus ==='Absent'">
     </div>
@@ -28,6 +30,12 @@
     <div style="width:20px; height:20px; background-color:orange;"
         *ngIf="studentStatus === 'late'|| studentStatus ==='Late' || studentStatus ==='late ' ">
     </div>
+
+    </div>
+
+  
+   
+    
 
 
 
