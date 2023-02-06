@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input,  OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-students',
@@ -12,12 +12,16 @@ export class StudentsComponent implements OnInit{
   ngOnInit() {
     
   }
+
+  @Input() studentName: string ="";
   
-  studentName = 'Henrik';
-  studentStatus = 'present';
+  @Input() studentStatus: string = "";
+
   
-  getStatus(){
+  
+  /*getStatus(){
     return this.studentStatus;
-  }
+  }*/
+
   
 }

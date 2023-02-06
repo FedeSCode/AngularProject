@@ -1,8 +1,37 @@
 <li class="list-group-item">
-    <h4>
-        Liste des étudiants
-    </h4>
-    <h4>Etudiant: {{studentName}} = {{getStatus()}}</h4>
-    
+
+    <!-- <h4>Etudiant:
+        <input type="text" class="form-control" [(ngModel)]="studentName">
+        <select name="presens" class="form-control">
+            <option value="">--Please choose an option--</option>
+            <option value="present" name="present" [(ngModel)]="studentStatus">present</option>
+            <option value="Absent" name="Absent" [(ngModel)]="studentStatus">Absent</option>
+            <option value="Late" name="Late" [(ngModel)]="studentStatus">Late</option>
+        </select>
+        
+
+        {{studentName}} {{studentStatus}}
+    </h4>-->
+
+    <div>
+    <h4>Etudiant: <input type="text" class="form-control" [(ngModel)]="studentName">
+        <input type="text" class="form-control" [(ngModel)]="studentStatus">: {{studentName}} {{studentStatus }} 
+        <span></span></h4>
+    </div>
+   
+    <div style="width:20px; height:20px; background-color:red; " 
+        *ngIf="studentStatus === 'absent' || studentStatus ==='Absent'">
+    </div>
+    <div style="width:20px; height:20px; background-color:green;"
+        *ngIf="studentStatus === 'present'|| studentStatus ==='présent' || studentStatus ==='Present' ">
+    </div>
+    <div style="width:20px; height:20px; background-color:orange;"
+        *ngIf="studentStatus === 'late'|| studentStatus ==='Late' || studentStatus ==='late ' ">
+    </div>
+
+
+
+
+
 
 </li>
