@@ -16,7 +16,8 @@ export class StudentService {
       name: 'Lina',
       status: 'absent'
 
-    },{
+    },
+    {
       name: 'Clement',
       status: 'late'
     }
