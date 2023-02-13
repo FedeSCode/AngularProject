@@ -8,7 +8,6 @@ styleUrls: ['./student-view.component.scss']
 })
 
 export class StudentViewComponent {
-title = 'AngularProjet';
 isAuth= true;
 students : any;
 
@@ -38,7 +37,7 @@ allAbsent(){
   if(confirm('Etes vous sûr qu \\’ils sont tous absents ?')){
     this.studentService.switchOffAll();
   }else {
-    return ; 
+    return; 
   }
 }
 

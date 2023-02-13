@@ -9,12 +9,16 @@ import { StudentService } from './service/student.service';
 import { FormsModule } from '@angular/forms';
 import { StudentsComponent } from './students/students.component';
 import { AuthService } from './service/auth.service';
+import { NavComponent } from './nav/nav.component';
+import { StudentViewComponent } from './student-view/student-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentsComponent,
+    StudentViewComponent,
     routedComponents,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

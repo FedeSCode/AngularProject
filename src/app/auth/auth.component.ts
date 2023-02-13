@@ -11,12 +11,13 @@ export class AuthComponent {
   authStatus: boolean | any;
 
   
-  constructor(private authService = AuthService){
+  constructor(private authService : AuthService){
     
   }
 
   ngOnInit(){
-    this.authServices = this.authService;
+    this.authStatus = this.authService.isAuth;
+    
   }
 
 
@@ -29,8 +30,7 @@ export class AuthComponent {
     );
   }
     
-    
-    
+  
   onSignOut() {
 
     this.authService.signOut();

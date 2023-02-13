@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 
+
 export class StudentService {
-  
   students = [
     {
     name: 'Fede',
@@ -21,7 +21,6 @@ export class StudentService {
       status: 'late'
     }
   ];
-
 
   switchOnAll(){
     for(let student of this.students){

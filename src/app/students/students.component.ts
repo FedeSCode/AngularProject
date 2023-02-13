@@ -9,7 +9,11 @@ import { StudentService } from '../service/student.service';
 
 export class StudentsComponent implements OnInit{
   isAuth = false;
-  students : any;
+
+  @Input() index!: number ;
+  @Input() studentName!: string ;
+  @Input() studentStatus!: string;
+
 
   constructor(private studentService: StudentService) { 
     setTimeout(
@@ -22,9 +26,6 @@ export class StudentsComponent implements OnInit{
 
   ngOnInit() {}
 
-  @Input() index!: number ;
-  @Input() studentName!: string ;
-  @Input() studentStatus!: string;
 
 
   getColor() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from './service/student.service';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent {
   title= "Angular Project"
   isAuth = false;
-  students : any;
-
-
+  student: any;
   
-  
-  constructor(  ){
-
+  constructor(){
   }
-    
+  
   ngOnInit() {
   }
 
   lastUpdate = new Date();
-
-  
-
 }

@@ -1,32 +1,17 @@
-<li [ngClass]="{'list-group-item': true, 
-    'list-group-item-success': studentStatus === 'present',   
-    'list-group-item-danger': studentStatus === 'absent' }" ]>
+<div class="students-card">
+    <li [ngClass]="{'list-group-item': true, 
+        'list-group-item-success': studentStatus === 'present',   
+        'list-group-item-danger': studentStatus === 'absent' }" ]>
+    </li>
 
-    <div class="students-card">
-
-        <h4>Etudiant: <input type="text" class="form-control" [(ngModel)]="studentName">
-            <input type="text" class="form-control" [(ngModel)]="studentStatus">
-        </h4>
-        <h4 [ngStyle]="{color:getColor()}"
-        *ngFor="let student of students; let i = index"> étudiant : {{studentName}} -- Statut :{{ getStatus() }} </h4>
-
-       /* <div style="width:20px; height:20px; background-color:red; "
-            *ngIf="studentStatus === 'absent' || studentStatus ==='Absent'">
-        </div>
-        <div style="width:20px; height:20px; background-color:green;"
-            *ngIf="studentStatus === 'present'|| studentStatus ==='présent' || studentStatus ==='Present' ">
-        </div>
-        <div style="width:20px; height:20px; background-color:orange;"
-            *ngIf="studentStatus === 'late'|| studentStatus ==='Late' || studentStatus ==='late ' ">
-        </div>*/
-
-        <li>
+    <div>Etudiant:
+        <h4 [ngStyle]="{color:getColor()}"> étudiant : {{studentName}} -- Statut :{{ getStatus() }} </h4>
         <input type="text" class="form-control" [(ngModel)]="studentName">
-        <button  class="btn btn-sm btn-success" *ngIf="studentStatus === 'absent' " 
-        (click)="onSwitch()" >Présent</button>
-        <button class="btn btn-sm btn-danger" *ngIf="studentStatus === 'present'"
-        (click)= "onSwitch()">Absent </button> </li>
-
+        <input type="text" class="form-control" [(ngModel)]="studentStatus">
     </div>
 
-</li>
+    <li>
+        <button class="btn btn-sm btn-success" *ngIf="studentStatus === 'absent' " (click)="onSwitch()">Présent</button>
+        <button class="btn btn-sm btn-danger" *ngIf="studentStatus === 'present'" (click)="onSwitch()">Absent </button>
+    </li>
+</div>
