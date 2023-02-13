@@ -8,14 +8,14 @@ import { StudentsComponent } from './students/students.component';
 
 
 const appRoutes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'students'},
+  { path: '', pathMatch: 'full', redirectTo: ''},
   { path: 'students', component: StudentViewComponent},
   { path: 'auth', component: AuthComponent}
 ];
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes),AuthComponent,StudentsComponent],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
 

@@ -1,18 +1,29 @@
-import {Component, Input,  OnInit } from '@angular/core';
+import {Component, OnInit , Input} from '@angular/core';
+import { StudentService } from '../service/student.service';
 
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.scss']
 })
+
 export class StudentsComponent implements OnInit{
-  constructor(){
-  }
-  ngOnInit() {
-    
+  isAuth = false;
+  students : any;
+
+  constructor(private studentService: StudentService) { 
+    setTimeout(
+      () =>{
+        this.isAuth = true;
+      }, 4000
+    );
+
   }
 
-  @Input() studentName!: string;
+  ngOnInit() {}
+
+  @Input() index!: number ;
+  @Input() studentName!: string ;
   @Input() studentStatus!: string;
 
 
@@ -36,10 +47,20 @@ export class StudentsComponent implements OnInit{
       }, 3000
     );
   });
+
+
+  onSwitch() {
+    if(this.studentStatus === 'present') {
+    this.studentService.switchOffOne(this.index);
+    } else if(this.studentStatus === 'absent')
+    this.studentService.switchOnOne(this.index);
+  }
   
   getStatus(){
     return this.studentStatus;
   }
+
+  
 
   
 }

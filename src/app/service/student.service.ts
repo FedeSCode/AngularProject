@@ -3,10 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class StudentService {
-
-  constructor() { }
-
+  
   students = [
     {
     name: 'Fede',
@@ -22,6 +21,7 @@ export class StudentService {
       status: 'late'
     }
   ];
+
 
   switchOnAll(){
     for(let student of this.students){
@@ -40,6 +40,13 @@ export class StudentService {
     }  
   }
 
+  switchOnOne(i: number) {
+    this.students[i].status = 'present';
+  }
+
+  switchOffOne(i: number) {
+    this.students[i].status = 'absent';
+  }
 
 
 }

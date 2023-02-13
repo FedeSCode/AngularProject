@@ -7,20 +7,22 @@ import { AppComponent } from './app.component';
 import { StudentService } from './service/student.service';
 
 import { FormsModule } from '@angular/forms';
-import { StudentViewComponent } from './student-view/student-view.component';
+import { StudentsComponent } from './students/students.component';
+import { AuthService } from './service/auth.service';
 
 @NgModule({
   declarations: [
+    AppComponent,
+    StudentsComponent,
     routedComponents,
-    StudentViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-
+    FormsModule
   ],
-  providers: [StudentService],
+  providers: [StudentService, AuthService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

@@ -5,18 +5,35 @@ def ault">
       <ul class="nav navbar nav">
 
         <li><a routerLink="auth">Authentification</a></li>
-        <li class="active"><a routerLink="students">Etudiants</a></li>
+        <li routerLinkActive="active" ><a routerLink="students">Etudiants</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <router-outlet></router-outlet>
-      <app-student-view></app-student-view>
 
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <h2>
+    Feuille de presence
+  </h2>
+  <p>
+    Mis à jour : {{lastUpdate | date}}
+  </p>
+
+</div>
+
+<div class="content" role="main">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <app-student-view></app-student-view>
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
+
 </div>

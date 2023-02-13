@@ -1,4 +1,3 @@
-import { StudentService } from './service/student.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +5,23 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  constructor(){
-    
+  title= "Angular Project"
+  isAuth = false;
+  students : any;
+
+
+  
+  
+  constructor(  ){
+
   }
+    
+  ngOnInit() {
+  }
+
+  lastUpdate = new Date();
 
   
 
