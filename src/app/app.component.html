@@ -1,24 +1,17 @@
 <app-nav></app-nav>
 <div class="content" role="main">
-
+  <!--ajout-->
   <div style="text-align:center">
     <h1>
-      Welcome to {{title}}!
+      Welcome to {{ title }}!
     </h1>
-    <h2>
-      Feuille de presence
-    </h2>
-    <p>
-      Mis à jour : {{lastUpdate | date}}
-    </p>
-  
+    <p>Mis à jour : {{ lastUpdate | date }}</p>
   </div>
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <app-student-view></app-student-view>
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
-</div>
-<router-outlet></router-outlet>
+

@@ -3,22 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule, routedComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { StudentService } from './service/student.service';
-
-import { FormsModule } from '@angular/forms';
 import { StudentsComponent } from './students/students.component';
-import { AuthService } from './service/auth.service';
-import { NavComponent } from './nav/nav.component';
+import { FormsModule } from '@angular/forms';
+import { StudentService } from './service/student.service';
 import { StudentViewComponent } from './student-view/student-view.component';
+import { NavComponent } from './nav/nav.component';
 import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentsComponent,
-    routedComponents,
     NavComponent,
+    routedComponents,
     AuthComponent,
   ],
   imports: [
@@ -26,8 +23,8 @@ import { AuthComponent } from './auth/auth.component';
     AppRoutingModule,
     FormsModule
   ],
+
   providers: [StudentService],
   bootstrap: [AppComponent]
 })
-
 export class AppModule { }

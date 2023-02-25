@@ -1,5 +1,6 @@
-import {Component, OnInit , Input} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { StudentService } from '../service/student.service';
+
 
 @Component({
   selector: 'app-students',
@@ -8,60 +9,37 @@ import { StudentService } from '../service/student.service';
 })
 
 export class StudentsComponent implements OnInit{
-  isAuth = false;
 
-  @Input() index!: number ;
-  @Input() studentName!: string ;
+  @Input() studentName!: string;
   @Input() studentStatus!: string;
+  @Input() index!: number;
+  constructor(private studentService: StudentService) { }
 
-
-  constructor(private studentService: StudentService) { 
-    setTimeout(
-      () =>{
-        this.isAuth = true;
-      }, 4000
-    );
-
+  ngOnInit(){
   }
-
-  ngOnInit() {}
-
-
+  getStatus() {
+    return this.studentStatus; }
 
   getColor() {
     if(this.studentStatus === 'present') {
-    return 'green';
-    }else if(this.studentStatus === 'absent'){
-    return 'red';
-    }else if(this.studentStatus === 'late'){
-    return 'orange';
-    }else{
-      return
+      return 'green';
+    } else if(this.studentStatus === 'absent') {
+      return 'red';
+    } else if(this.studentStatus === 'late') {
+      return 'orange';
+    } else{
+      return;
     }
   }
-  
-  lastUpdate : Promise<Date> = new Promise((resolve, reject) => {
-    const date = new Date();
-    setTimeout(
-      () =>{
-        resolve(date);
-      }, 3000
-    );
-  });
-
-
   onSwitch() {
     if(this.studentStatus === 'present') {
     this.studentService.switchOffOne(this.index);
-    } else if(this.studentStatus === 'absent')
+    } else if(this.studentStatus === 'absent') {
     this.studentService.switchOnOne(this.index);
-  }
-  
-  getStatus(){
-    return this.studentStatus;
+    }
+    console.log('index =' + this.index);
   }
 
-  
 
-  
+
 }
