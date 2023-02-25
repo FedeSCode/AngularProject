@@ -1,11 +1,13 @@
 import { NgModule, Component , OnInit } from "@angular/core";
 import {CommonModule} from "@angular/common"
+
 @NgModule({
   declarations:[],
   imports:[
     CommonModule
   ]
 })
+
 export class StudentService {
   students = [
     {

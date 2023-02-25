@@ -1,8 +1,10 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 .students-card {
     box-sizing: border-box;
     width: 50%;
     margin: 20px auto;
-    padding: 10px 30px;
+    padding: 20px 30px;
     box-shadow: lightgray 4px 4px 20px;
 
     img {
@@ -16,6 +18,16 @@
     p {
         font-weight: 300;
         font-size: 16px;
+    }
+
+    input{
+        background-color: white;
+        color: black;
+        padding: 5px;
+        margin: 5px;
+        width: 50%;
+        align-items: center;
+        justify-content: center;
     }
 
 
