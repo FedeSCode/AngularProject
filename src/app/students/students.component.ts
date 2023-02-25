@@ -9,7 +9,7 @@ import { StudentService } from '../service/student.service';
 })
 
 export class StudentsComponent implements OnInit{
-
+  @Input() id!: number;
   @Input() studentName!: string;
   @Input() studentStatus!: string;
   @Input() index!: number;

@@ -10,6 +10,8 @@ import { StudentViewComponent } from './student-view/student-view.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
+import { SingleStudentComponent } from './single-student/single-student.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { HomeComponent } from './home/home.component';
     routedComponents,
     AuthComponent,
     HomeComponent,
+    SingleStudentComponent,
+    FourOhFourComponent,
   ],
   imports: [
     BrowserModule,

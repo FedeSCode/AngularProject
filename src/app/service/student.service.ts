@@ -1,6 +1,6 @@
 import { NgModule, Component , OnInit } from "@angular/core";
 import {CommonModule} from "@angular/common"
-import { StudentViewComponent } from "../student-view/student-view.component";
+
 
 @NgModule({
   declarations:[],
@@ -10,26 +10,36 @@ import { StudentViewComponent } from "../student-view/student-view.component";
 })
 
 export class StudentService {
-  
+  constructor(){
+
+  }
+
   students = [
     {
+    id:1,
     name: 'Fede',
     status: 'present'
     },
     {
+      id:2,
       name: 'Lina',
       status: 'absent'
-
     },
     {
+      id:3,
       name: 'Clement',
-      status: 'late'
+      status: 'absent'
+    },
+    {
+      id:4,
+      name: 'Morgane',
+      status: 'present'
     }
   ];
 
   switchOnAll(){
     for(let student of this.students){
-        student.status = 'present';
+      student.status = 'present';
     }
   }
   
@@ -51,8 +61,18 @@ export class StudentService {
   switchOffOne(i: number) {
     this.students[i].status = 'absent';
   }
+  switchLateOne(i: number) {
+    this.students[i].status = 'late';
+  }
 
-
+  getStudentById(id: number) {
+    const student = this.students.find(
+    (s) =>{    
+      return s.id === id;
+    }
+    );
+    return student;
+  }
   
 
 }
