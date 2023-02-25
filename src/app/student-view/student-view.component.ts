@@ -40,6 +40,7 @@ export class StudentViewComponent {
       }, 4000
       );
   }
+  
   ngOnInit(){
     this.students = this.studentService.students;
   }

@@ -1,4 +1,5 @@
 import { Component , OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -8,16 +9,15 @@ import { AuthService } from '../service/auth.service';
 })
 
 export class AuthComponent {
-  authStatus: boolean | any;
+  authStatus!: boolean;
 
   
-  constructor(private authService : AuthService){
-    
+  constructor(private authService : AuthService, private router: Router,){
+
   }
 
   ngOnInit(){
     this.authStatus = this.authService.isAuth;
-    
   }
 
 
@@ -25,6 +25,7 @@ export class AuthComponent {
     this.authService.signIn().then(
       () =>{
         alert('Sign in successful!');
+        this.router.navigate(['students']);
         this.authStatus = this.authService.isAuth;
       }
     );

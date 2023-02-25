@@ -9,6 +9,7 @@ import { StudentService } from './service/student.service';
 import { StudentViewComponent } from './student-view/student-view.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthComponent } from './auth/auth.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AuthComponent } from './auth/auth.component';
     NavComponent,
     routedComponents,
     AuthComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

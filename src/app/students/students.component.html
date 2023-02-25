@@ -8,7 +8,7 @@
         <input type="text" class="form-control" [(ngModel)]="studentStatus">
         <button class="btn btn-sm btn-success" *ngIf="studentStatus === 'absent'" (click)="onSwitch()">Présent</button>
         <button class="btn btn-sm btn-danger" *ngIf="studentStatus === 'present'" (click)="onSwitch()">Absent</button>
-        <button class="btn btn-sm btn-danger" *ngIf="studentStatus === 'late'" (click)="onSwitch()">Present</button>
+        <button class="btn btn-sm btn-success" *ngIf="studentStatus === 'late'" (click)="onSwitch()">Present</button>
     </li>
 </div>
 

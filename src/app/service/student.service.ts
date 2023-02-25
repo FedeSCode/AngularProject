@@ -1,5 +1,6 @@
 import { NgModule, Component , OnInit } from "@angular/core";
 import {CommonModule} from "@angular/common"
+import { StudentViewComponent } from "../student-view/student-view.component";
 
 @NgModule({
   declarations:[],
@@ -9,6 +10,7 @@ import {CommonModule} from "@angular/common"
 })
 
 export class StudentService {
+  
   students = [
     {
     name: 'Fede',
@@ -50,5 +52,7 @@ export class StudentService {
     this.students[i].status = 'absent';
   }
 
+
+  
 
 }
