@@ -1,12 +1,11 @@
-<ul>
-<app-students *ngFor="let student of students; let i = index" [studentName]="students.name" [studentStatus]="student.studentStatus" [index]="i"> </app-students>
-</ul>
+
 
 <h2>Les etudiants</h2>
         <ul class="list-group">
-          <button class="btn btn-success" [disabled]="!isAuth" (click)="allPresent()">Tous present</button>
-          <button class="btn btn-danger" [disabled]="!isAuth" (click)="allAbsent()">Tous Absent</button>
-          <button class="btn btn-danger" [disabled]="!isAuth" (click)="allLate()">Tous en retard </button>
+          <app-students *ngFor="let student of students; let i = index" [studentName]="students.name" [studentStatus]="student.studentStatus" [index]="i"> </app-students>
         </ul>
+        <button class="btn btn-success" [disabled]="!isAuth" (click)="allPresent()">Tous present</button>
+        <button class="btn btn-danger" [disabled]="!isAuth" (click)="allAbsent()">Tous Absent</button>
+        <button class="btn btn-danger" [disabled]="!isAuth" (click)="allLate()">Tous en retard </button>
 
       

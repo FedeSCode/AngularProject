@@ -8,7 +8,7 @@ import { AuthService } from '../service/auth.service';
 })
 
 export class AuthComponent {
-  authStatus: boolean | any;
+  /*authStatus: boolean | any;
 
   
   constructor(private authService : AuthService){
@@ -35,6 +35,6 @@ export class AuthComponent {
 
     this.authService.signOut();
     this.authStatus = this.authService.isAuth;
-  }
+  }*/
 
 }

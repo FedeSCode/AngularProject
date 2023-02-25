@@ -11,21 +11,22 @@ import { StudentsComponent } from './students/students.component';
 import { AuthService } from './service/auth.service';
 import { NavComponent } from './nav/nav.component';
 import { StudentViewComponent } from './student-view/student-view.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentsComponent,
-    StudentViewComponent,
     routedComponents,
     NavComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [StudentService, AuthService],
+  providers: [StudentService],
   bootstrap: [AppComponent]
 })
 
