@@ -12,6 +12,7 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { SingleStudentComponent } from './single-student/single-student.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
     HomeComponent,
     SingleStudentComponent,
     FourOhFourComponent,
+    EditStudentComponent,
   ],
   imports: [
     BrowserModule,
