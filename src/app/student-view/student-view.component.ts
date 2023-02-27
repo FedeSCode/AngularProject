@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { StudentService } from '../service/student.service';
-
+import {Subscription} from 'rxjs'
 @Component({
   selector: 'app-student-view',
   templateUrl: './student-view.component.html',
@@ -10,6 +10,7 @@ export class StudentViewComponent {
 
   isAuth = false;
   students : any;
+  studentSubscription!: Subscription;
 
   allPresent() {
     if(confirm('Etes-vous sûr qu\’ils sont tous présent ?')) {
@@ -42,9 +43,20 @@ export class StudentViewComponent {
   }
   
   ngOnInit(){
-    this.students = this.studentService.students;
+    /*this.students = this.studentService.students;*/
+
+    this.studentSubscription = this.studentService.studentsSubject.subscribe(
+      (students: any[]) =>{
+      this.students = students;
+      }
+    );
+    this.studentService.emitStudentSubject();
   }
 
+
+  ngOnDestroy() {
+    this.studentSubscription.unsubscribe();
+  }
 
 
   }
