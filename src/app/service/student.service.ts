@@ -90,4 +90,20 @@ export class StudentService {
   }
   
 
+  addStudent(name: string, status: string){
+    console.log("addStudent");
+    const studentObject = {
+      id: 0,
+      name:"",
+      status:""
+    }
+    console.log(studentObject,studentObject.id,studentObject.name,studentObject.status);
+    studentObject.name = name;
+    studentObject.status = status;
+    studentObject.id = this.students[(this.students.length-1)].id+1;
+    this.students.push(studentObject);
+    this.emitStudentSubject();
+
+  }
+
 }

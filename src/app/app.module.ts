@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { SingleStudentComponent } from './single-student/single-student.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
     SingleStudentComponent,
     FourOhFourComponent,
     EditStudentComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
