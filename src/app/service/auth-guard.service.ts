@@ -14,15 +14,12 @@ export class AuthGuardService implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot, 
     state: RouterStateSnapshot): any{
-
       if(this.authService.isAuth === true){
         return true;
       }
       else{
         return this.router.navigate(['auth']);
-
       }
-
     }
 }
 
